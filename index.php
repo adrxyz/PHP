@@ -1,19 +1,14 @@
 <?php
     require "function.php"; // Include helper functions
     
-    $uri = $_SERVER['REQUEST_URI']; // Get the current URI
-    
-    dd($uri);
+    $uri = parse_url($_SERVER['REQUEST_URI']) ['path']; // Get the current URI
 
-    // Check for home route
-    if ($uri === '/PHP/') {
-        require 'controllers/index.php'; // Home controller
+    $routes = [
+        '/PHP/' => 'controllers/index.php',
+        '/PHP/about' => 'controllers/about.php',
+        '/PHP/contact' => 'controllers/contact.php',
+    ];
     
-    // Check for about page
-    } else if ($uri === '/PHP/about') {
-        require 'controllers/about.php'; // About controller
-    
-    // Check for contact page
-    } else if ($uri === '/PHP/contact') {
-        require 'controllers/contact.php'; // Contact controller
+    if(array_key_exists($uri,$routes)) {
+        require $routes[$uri];
     }
