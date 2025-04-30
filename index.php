@@ -1,14 +1,12 @@
 <?php
     require "function.php"; // Include helper functions
     // require "router.php";
-// connect the mySQL database.
-    $dsn = "mysql:host=localhost;port=3306;dbname=php;charset=utf8mb4"; //for the user=root;password=Jessemontejo261104
+    require "Database.php";
+
+    $db = new Database();
+
+    $users = $db -> query("SELECT * FROM users") -> fetchAll(PDO::FETCH_ASSOC);
     
-    $pdo =new PDO($dsn, 'root', 'Jessemontejo261104');
-
-    $statement =$pdo -> prepare ("SELECT * FROM users");
-    $statement -> execute();
-
-    $users = $statement -> fetchAll();
-
-    dd($users);
+    foreach ($users as $user){
+        echo "<li>" . $user['email'] . "</li>"; 
+    } 
