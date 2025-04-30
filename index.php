@@ -3,10 +3,17 @@
     // require "router.php";
     require "Database.php";
 
-    $db = new Database();
+    $config = require('config.php');
 
-    $users = $db -> query("SELECT * FROM users") -> fetchAll(PDO::FETCH_ASSOC);
+    $db = new Database($config['database']);
+
+    $id = $_GET['id'];
+    $query = "SELECT * FROM users WHERE id = :id"; 
     
-    foreach ($users as $user){
-        echo "<li>" . $user['email'] . "</li>"; 
-    } 
+
+    $users = $db -> query ($query, [':id' => $id]) -> fetch(); 
+   
+    // $users = $db -> query("SELECT * FROM users WHERE id = {$id}") -> fetchAll(PDO::FETCH_ASSOC);
+
+    dd($users);
+    
