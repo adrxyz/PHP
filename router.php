@@ -4,6 +4,7 @@
     $routes = [
         '/PHP/' => 'controllers/index.php',
         '/PHP/about' => 'controllers/about.php',
+        '/PHP/posts' => 'controllers/posts.php',
         '/PHP/contact' => 'controllers/contact.php',
     ];
 
