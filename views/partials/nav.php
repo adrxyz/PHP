@@ -10,7 +10,7 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="/PHP/" class="<?= urlIs('/PHP/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md  hover:bg-gray-700 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
               <a href="/PHP/about" class="<?= urlIs('/PHP/about') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-              <a href="/PHP/posts" class="<?= urlIs('/PHP/posts') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Posts</a>
+              <a href="/PHP/orders" class="<?= urlIs('/PHP/orders') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Orders</a>
               <a href="/PHP/contact" class="<?= urlIs('/PHP/contact') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact us</a>
             </div>
           </div>
