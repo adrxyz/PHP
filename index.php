@@ -1,6 +1,7 @@
 <?php
     require "function.php"; // Include helper functions
     require "Database.php";
+    require "response.php";
     require "router.php";
     
 
