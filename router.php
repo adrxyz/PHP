@@ -1,14 +1,6 @@
 <?php
-    $uri = parse_url($_SERVER['REQUEST_URI']) ['path']; // Get the current URI
-
-    $routes = [
-        '/PHP/' => 'controllers/index.php',
-        '/PHP/about' => 'controllers/about.php',
-        '/PHP/orders' => 'controllers/orders.php',
-        '/PHP/order' => 'controllers/order.php',
-        '/PHP/contact' => 'controllers/contact.php',
-    ];
-
+    $routes = require('routes.php');
+    
     function routeToController($uri,$routes) {
         if(array_key_exists($uri,$routes)) {
             require $routes[$uri];
@@ -23,4 +15,7 @@
 
         die();
     }
+
+    $uri = parse_url($_SERVER['REQUEST_URI']) ['path']; // Get the current URI
+    
     routeToController($uri,$routes);
